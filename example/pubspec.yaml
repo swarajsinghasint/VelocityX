@@ -1,16 +1,17 @@
 name: vx_example
 version: 0.0.1
 description: A velocity x example app.
-publish_to: 'none'
+publish_to: "none"
 
 environment:
-  sdk: '>=3.2.4 <4.0.0'
+  sdk: ">=3.2.4 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   json_annotation: ^4.8.1
-  velocity_x: ^4.1.2
+  velocity_x:
+    path: ../
   vxstate: ^2.3.0
 
 dev_dependencies:
@@ -26,4 +27,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-

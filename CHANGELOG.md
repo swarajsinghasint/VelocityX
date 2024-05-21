@@ -1,3 +1,7 @@
+## [4.2.0] - May 21, 2024
+
+- Flutter 3.22 support
+
 ## [4.1.2] - Nov 23, 2023
 
 - Bug Fixes
