@@ -75,10 +75,10 @@ class VxTimelineState extends State<VxTimeline>
             firstElement: index == 0,
             lastElement: widget.timelineList.length == index + 1,
             controller: controller,
-            headingColor: widget.headingColor ??
-                Theme.of(context).colorScheme.onBackground,
+            headingColor:
+                widget.headingColor ?? Theme.of(context).colorScheme.onSurface,
             descriptionColor: widget.descriptionColor ??
-                Theme.of(context).colorScheme.onBackground,
+                Theme.of(context).colorScheme.onSurface,
             hideLauncher: !widget.showTrailing,
             trailing: widget.customTrailing,
           ),

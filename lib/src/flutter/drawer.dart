@@ -69,33 +69,32 @@ mixin VxDrawer {
 
     VoidCallback? hide;
 
-    OverlayEntry? overlayEntry = OverlayEntry(
-      builder: (BuildContext context) => _VxDrawer(
-        key: key,
-        type: type,
-        maskTap: hide,
-        showMask: showMask,
-        child: child,
-      ),
-    );
-    overlayState.insert(overlayEntry);
+    OverlayEntry? overlayEntry;
 
-    final ModalRoute? route = ModalRoute.of(context);
-    Future<bool> backClose() {
+    void backClose(bool shouldPop) {
       hide!();
-      return Future.value(false);
     }
 
-    // TODO(iampawan): Not sure how to change it to use `PopEntry`
-    route?.addScopedWillPopCallback(backClose);
-
     hide = () async {
-      // TODO(iampawan): Not sure how to change it to use `PopEntry`
-      route?.removeScopedWillPopCallback(backClose);
       await key.currentState?.reverseAnimation();
       overlayEntry?.remove();
       overlayEntry = null;
     };
+
+    overlayEntry = OverlayEntry(
+      builder: (BuildContext context) => PopScope(
+        onPopInvoked: backClose,
+        child: _VxDrawer(
+          key: key,
+          type: type,
+          maskTap: hide,
+          showMask: showMask,
+          child: child,
+        ),
+      ),
+    );
+
+    overlayState.insert(overlayEntry!);
 
     if (autoHide) {
       Future.delayed(

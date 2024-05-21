@@ -29,8 +29,7 @@ mixin VxBottomSheet {
           : null,
       isScrollControlled: true,
       isDismissible: isDismissible,
-      backgroundColor:
-          backgroundColor ?? Theme.of(context).colorScheme.background,
+      backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.surface,
       builder: (BuildContext context) {
         return SafeArea(
           bottom: isSafeAreaFromBottom,
@@ -79,8 +78,7 @@ mixin VxBottomSheet {
           : null,
       isScrollControlled: true,
       isDismissible: isDismissible,
-      backgroundColor:
-          backgroundColor ?? Theme.of(context).colorScheme.background,
+      backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.surface,
       builder: (BuildContext context) {
         return SafeArea(
           bottom: isSafeAreaFromBottom,
