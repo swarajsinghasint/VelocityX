@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
           builder: (_, store, status) => switch (status) {
             VxStatus.loading => 'loading...',
             _ => store.user.name.isNotEmpty
-                ? 'username: ${store.user.name}'
+                ? 'Username: ${store.user.name}'
                 : 'no data',
           }
               .text

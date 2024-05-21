@@ -17,7 +17,7 @@ class ProfilePage extends StatelessWidget {
         VxBuilder<BaseStore>(
           mutations: const {GetUser, UpdateName},
           builder: (context, store, status) {
-            return 'current name: ${store.user.name}'
+            return 'Current name: ${store.user.name}'
                 .text
                 .xl2
                 .makeCentered()
